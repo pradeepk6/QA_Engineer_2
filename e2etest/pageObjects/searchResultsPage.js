@@ -16,24 +16,29 @@ class SearchResultsPage extends BasePage {
         let jobListings_we = await this.World.driver.wait(until.elementsLocated(this.searchResults_we), 10000, '');
         let jobsArr = [];
         for (let we of jobListings_we) {
-            jobsArr.push(await we.getText());
+            let txt = await we.getText().then((txt) => { return txt });
+            jobsArr.push(txt);
         }
         return jobsArr;
     }
 
     async getSearchResultsHeading() {
-        return await this.World.driver.wait(until.elementLocated(this.searchResultsHeading), 10000,'').getText();
+        return await this.World.driver
+                            .wait(until.elementLocated(this.searchResultsHeading), 10000,'')
+                            .getText().then((txt) => { return txt });
     }
 
     async getBrowsebySectorResultsHeading() {
         return this.World.driver
             .wait(until.elementLocated(this.browseBySectorResultsHeading), 10000,'')
-            .getText();
+            .getText().then((txt) => { return txt });
     }
 
     async viewDetailsOfFirstJobListing() {
         let viewDetails_we = this.World.driver.wait(until.elementLocated(this.viewDetails), 10000,'');
-        return await this.World.driver.wait(until.elementIsVisible(viewDetails_we), 10000,'').click();
+        return await this.World.driver
+                            .wait(until.elementIsVisible(viewDetails_we), 10000,'')
+                            .click();
     }
 }
 module.exports = {SearchResultsPage}

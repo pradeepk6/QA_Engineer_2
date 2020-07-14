@@ -9,7 +9,9 @@ class NavBarPageFragment extends BasePage {
         super(World);
     }
     async isLoaded(){
-        return await this.World.driver.wait(until.elementLocated(this.navBar), 10000, '').isDisplayed();
+        return await this.World.driver
+                            .wait(until.elementLocated(this.navBar), 10000, '')
+                            .isDisplayed().then((bool) => { return bool });
     }
 }
 module.exports = {NavBarPageFragment}

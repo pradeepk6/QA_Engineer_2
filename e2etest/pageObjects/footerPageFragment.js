@@ -15,6 +15,7 @@ class FooterPageFragment extends BasePage {
         //todo
         return true;
     }
+    // fetch all links using fetch library
     async isAllLinksFunctional() {
         let bool = true;
         let links_we =  await this.World.driver.wait(until.elementsLocated(this.allLinks), 10000,'');

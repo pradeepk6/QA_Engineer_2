@@ -33,8 +33,8 @@ class SearchPageFragment extends BasePage {
     async isSearchJobsFragmentLoaded() {
         //check if search-keyword text box is loaded
         return await this.World.driver
-            .wait(until.elementLocated(this.keyword_txtBox), 10000, '')
-            .isDisplayed();
+                            .wait(until.elementLocated(this.keyword_txtBox), 10000, '')
+                            .isDisplayed().then((bool) => { return bool });
         //todo check for an additional condition
     }
 
@@ -42,7 +42,8 @@ class SearchPageFragment extends BasePage {
         // check if 'Banking and finance' is loaded
         return await this.World.driver
             .wait(until.elementLocated(this.bankingSector_a), 10000, '')
-            .isDisplayed();
+            .isDisplayed().then((bool) => { return bool });
+
         // todo second condition for eg: check if the number of sector links match
     }
 }

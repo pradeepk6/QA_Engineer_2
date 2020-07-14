@@ -9,7 +9,7 @@ class BasePage {
     }
 
     getTitle() {
-        return this.World.driver.getTitle();
+        return this.World.driver.getTitle().then((txt) => {return txt})
     }
 }
 module.exports = {BasePage}

@@ -12,14 +12,14 @@ class JobDetailsPage extends BasePage {
 
     async getJobDescription() {
         return await this.World.driver
-            .findElement(this.jobDescription_div)
-            .getText();
+                            .findElement(this.jobDescription_div)
+                            .getText().then((txt) => { return txt });
     }
 
     async isApplyDisplayed() {
         return await this.World.driver
-            .wait(until.elementLocated(this.apply_a), 10000,'')
-            .isDisplayed();
+                            .wait(until.elementLocated(this.apply_a), 10000,'')
+                            .isDisplayed().then((bool) => { return bool });
     }
 }
 module.exports = {JobDetailsPage}
