@@ -61,5 +61,6 @@ typings/
 .next
 
 .idea
+e2etest/reports
 
 
