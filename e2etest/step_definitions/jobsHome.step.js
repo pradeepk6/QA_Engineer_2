@@ -13,7 +13,6 @@ Given(/^I go to jobs page$/, () => {
 });
 
 Then('I should see the navigation bar', async () => {
-    console.log('jobsHomePage : ' + jobsHomePage.isNavBarLoaded());
     assert.isTrue(await jobsHomePage.isNavBarLoaded());
 });
 
