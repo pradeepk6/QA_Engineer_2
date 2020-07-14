@@ -16,7 +16,14 @@ Feature: Jobs page
   Scenario: Clicking on login link should take you to login page
     When I click on login link
     Then should be on login page
- @wip
+
   Scenario: Clicking on Create account link should take you to register page
     When I click on create account link
     Then should be on account register page
+
+  Scenario: All links on nav bar are functional
+    Then All links on nav bar should be functional
+  @wip
+  Scenario: Clicking on job alerts link should take to the intended page
+    When I click on job alerts link
+    Then should be job alerts page

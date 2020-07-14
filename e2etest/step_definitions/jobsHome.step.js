@@ -34,8 +34,10 @@ Then('I should see footer page loaded',async function () {
 
 
 Then('All links on Footer Page should be functional', async function () {
-    assert.isTrue(await jobsHomePage.footerPageFragment.isAllLinksFunctional(),
-                                'look for a console.log to see which link has failed');
+    assert.isTrue(await jobsHomePage.footerPageFragment.isAllLinksFunctional(), '');
+});
+Then('All links on nav bar should be functional', async function () {
+    assert.isTrue(await jobsHomePage.navBarPageFragment.isAllLinksFunctional(),'');
 });
 
 When('I click on login link', async function () {
@@ -52,6 +54,18 @@ Then('should be on account register page', async function () {
     createNewAccountPage = new CreateNewAccountPage(World);
     assert.isTrue(await createNewAccountPage.isLoaded());
 });
+
+When('I click on job alerts link', function () {
+    //todo
+    return true
+});
+
+Then('should be job alerts page', function () {
+    //todo
+    return true
+});
+
+
 
 
 
