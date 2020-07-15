@@ -28,24 +28,10 @@ class JobsHomePage extends BasePage {
         this.footerPageFragment = new FooterPageFragment(this.World);
     }
 
-     async isNavBarLoaded() {
-        return await this.navBarPageFragment.isLoaded();
-    }
-    async isSearchFragmentLoaded() {
-        return await this.searchPageFragment.isSearchJobsFragmentLoaded();
-    }
-
-    async isBrowseJobsBySectorLoaded() {
-        return await this.searchPageFragment.isBrowseJobsBySectorLoaded();
-    }
-
-    async isFooterPageFragmentLoaded() {
-        return await this.footerPageFragment.isLoaded();
-    }
-
     clickSignin() {
         return this.World.driver.findElement(this.login_a).click();
     }
+
     clickCreateAccount() {
         return this.World.driver.findElement(this.createAccount_a).click();
     }

@@ -17,19 +17,19 @@ Given(/^I go to jobs page$/, () => {
 });
 
 Then('I should see the navigation bar', async () => {
-    assert.isTrue(await jobsHomePage.isNavBarLoaded());
+    assert.isTrue(await jobsHomePage.navBarPageFragment.isLoaded());
 });
 
 Then('I should see search fragment loaded', async () => {
-    assert.isTrue(await jobsHomePage.isSearchFragmentLoaded());
+    assert.isTrue(await jobsHomePage.searchPageFragment.isSearchJobsFragmentLoaded());
 });
 
 Then('I should see search-by-sector fragment loaded', async () => {
-    assert.isTrue(await jobsHomePage.isBrowseJobsBySectorLoaded());
+    assert.isTrue(await jobsHomePage.searchPageFragment.isBrowseJobsBySectorLoaded());
 });
 
-Then('I should see footer page loaded',async function () {
-    assert.isTrue(await jobsHomePage.isFooterPageFragmentLoaded());
+Then('I should see footer page loaded', async function () {
+    assert.isTrue(await jobsHomePage.footerPageFragment.isLoaded());
 });
 
 
@@ -37,18 +37,18 @@ Then('All links on Footer Page should be functional', async function () {
     assert.isTrue(await jobsHomePage.footerPageFragment.isAllLinksFunctional(), '');
 });
 Then('All links on nav bar should be functional', async function () {
-    assert.isTrue(await jobsHomePage.navBarPageFragment.isAllLinksFunctional(),'');
+    assert.isTrue(await jobsHomePage.navBarPageFragment.isAllLinksFunctional(), '');
 });
 
-When('I click on login link', async function () {
-    return await jobsHomePage.clickSignin();
+When('I click on login link', function () {
+    return jobsHomePage.clickSignin();
 });
-Then('should be on login page', async  function () {
+Then('should be on login page', async function () {
     loginPage = new LoginPage(World);
     assert.isTrue(await loginPage.isLoaded());
 });
-When('I click on create account link', async function () {
-    return await jobsHomePage.clickCreateAccount();
+When('I click on create account link', function () {
+    return jobsHomePage.clickCreateAccount();
 });
 Then('should be on account register page', async function () {
     createNewAccountPage = new CreateNewAccountPage(World);
