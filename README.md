@@ -2,20 +2,20 @@
 * tested on node v12 with chromedriver version 83.0.0
 * to generate reports run script report
 
-# The Economist - QA Engineer
+# 
 
 # Your Challenge
 We do not expect you to complete all of the following challenges within the given time limit. The aim of this assessment is to determine whether or not your approach is suitable - documentation is key. **We will be unable to process your application if you do not provide a readme**
 
 ## End-to-end
-We need you to create an end-to-end test suite for https://jobs.economist.com/ using the following technologies:
+We need you to create an end-to-end test suite for https: using the following technologies:
  - NodeJS/JavaScript
  - Cucumber
  - Selenium-Webdriver
  - Chromedriver
 
 ## The Scenario
-We have a jobs site (https://jobs.economist.com) for advertising various career opportunities at The Economist. We'd like you to write an automated test suite to ensure that some features have been developed properly.
+We have a jobs site for advertising various career opportunities . We'd like you to write an automated test suite to ensure that some features have been developed properly.
 
 ### The Features
 The following are a list of criteria we would like tested. It is your job to break these down further into cucumber scenarios and steps:

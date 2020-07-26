@@ -27,7 +27,6 @@ class CustomWorld {
 
   start() {
     this.driver = buildDriver()
-    this.driver.manage().setTimeouts({script: 30000, pageLoad: 300000, implicit: 6000});
   }
 
   async end() {
