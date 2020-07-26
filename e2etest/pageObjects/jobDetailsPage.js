@@ -11,13 +11,13 @@ class JobDetailsPage extends BasePage {
     }
 
     async getJobDescription() {
-        return await this.World.driver
+        return await this.driver
                             .findElement(this.jobDescription_div)
                             .getText().then((txt) => { return txt });
     }
 
     async isApplyDisplayed() {
-        return await this.World.driver
+        return await this.driver
                             .wait(until.elementLocated(this.apply_a), 10000,'')
                             .isDisplayed().then((bool) => { return bool });
     }

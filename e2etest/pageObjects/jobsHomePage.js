@@ -4,7 +4,7 @@ const {FooterPageFragment} = require('./footerPageFragment');
 const {NavBarPageFragment} = require('./navBarPageFragment');
 const {FeaturedJobsPageFragment} = require('./featuredJobsPageFragment');
 const {JobsBlogPageFragment} = require('./jobsBlogPageFragment');
-const {By} = require('selenium-webdriver');
+const {By, until} = require('selenium-webdriver');
 
 class JobsHomePage extends BasePage {
 
@@ -28,12 +28,16 @@ class JobsHomePage extends BasePage {
         this.footerPageFragment = new FooterPageFragment(this.World);
     }
 
-    clickSignin() {
-        return this.World.driver.findElement(this.login_a).click();
+    async clickSignIn() {
+        return await this.driver
+                         .wait(until.elementLocated(this.login_a),10000,'')
+                         .click();
     }
 
-    clickCreateAccount() {
-        return this.World.driver.findElement(this.createAccount_a).click();
+    async clickCreateAccount() {
+        return await this.driver
+                        .wait(until.elementLocated(this.createAccount_a), 10000, '' )
+                        .click();
     }
 }
 module.exports = {JobsHomePage}

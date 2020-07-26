@@ -13,7 +13,7 @@ class SearchResultsPage extends BasePage {
     }
 
     async getSearchResults() {
-        let jobListings_we = await this.World.driver.wait(until.elementsLocated(this.searchResults_we), 10000, '');
+        let jobListings_we = await this.driver.wait(until.elementsLocated(this.searchResults_we), 10000, '');
         let jobsArr = [];
         for (let we of jobListings_we) {
             let txt = await we.getText().then((txt) => { return txt });
@@ -23,19 +23,19 @@ class SearchResultsPage extends BasePage {
     }
 
     async getSearchResultsHeading() {
-        return await this.World.driver
+        return await this.driver
                             .wait(until.elementLocated(this.searchResultsHeading), 10000,'')
                             .getText().then((txt) => { return txt });
     }
 
     async getBrowsebySectorResultsHeading() {
-        return this.World.driver
+        return this.driver
             .wait(until.elementLocated(this.browseBySectorResultsHeading), 10000,'')
             .getText().then((txt) => { return txt });
     }
 
     async viewDetailsOfFirstJobListing() {
-        let viewDetails_we = this.World.driver.wait(until.elementLocated(this.viewDetails), 10000,'');
+        let viewDetails_we = this.driver.wait(until.elementLocated(this.viewDetails), 10000,'');
         return await this.World.driver
                             .wait(until.elementIsVisible(viewDetails_we), 10000,'')
                             .click();

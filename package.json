@@ -18,7 +18,7 @@
   },
   "scripts": {
     "lint": "eslint",
-    "test": "node node_modules/cucumber/bin/cucumber-js e2etest/features --require e2etest/step_definitions -f json:e2etest/reports/cucumber_report.json",
+    "test": "node node_modules/cucumber/bin/cucumber-js --tags @wip e2etest/features --require e2etest/step_definitions -f json:e2etest/reports/cucumber_report.json",
     "report": "node e2etest/createHtmlReports.js",
     "test:report": "node node_modules/cucumber/bin/cucumber-js e2etest/features --require e2etest/step_definitions -f json:e2etest/reports/cucumber_report.json && node e2etest/createHtmlReports.js"
   },

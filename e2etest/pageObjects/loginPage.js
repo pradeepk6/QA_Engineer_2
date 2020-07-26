@@ -8,10 +8,10 @@ class LoginPage extends BasePage {
     constructor(World) {
         super(World);
     }
+
     async isLoaded() {
-        let pageTitle = await this.getTitle();
-        let pageTitleMatches = pageTitle.toLowerCase().includes('logon');
-        let pwd_txtField_displayed = await this.World.driver.findElement(this.signinPassword_txtbox)
+        const pageTitleMatches = this.driver.wait(until.titleContains('Logon'),10000,'');
+        const pwd_txtField_displayed = await this.World.driver.findElement(this.signinPassword_txtbox)
                                                     .isDisplayed().then((bool) => { return bool });
         return (pageTitleMatches && pwd_txtField_displayed);
     }

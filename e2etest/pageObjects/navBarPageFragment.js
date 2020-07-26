@@ -13,13 +13,13 @@ class NavBarPageFragment extends BasePage {
         super(World);
     }
     async isLoaded(){
-        return await this.World.driver
+        return await this.driver
                             .wait(until.elementLocated(this.navBar), 10000, '')
                             .isDisplayed().then((bool) => { return bool });
     }
 
     async isAllLinksFunctional() {
-        let links_we =  await this.World.driver.wait(until.elementsLocated(this.allLinks), 10000,'');
+        let links_we =  await this.driver.wait(until.elementsLocated(this.allLinks), 10000,'');
         return checkAllLinksFunctional(links_we);
     }
 }

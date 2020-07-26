@@ -41,7 +41,7 @@ Then('All links on nav bar should be functional', async function () {
 });
 
 When('I click on login link', function () {
-    return jobsHomePage.clickSignin();
+    return jobsHomePage.clickSignIn();
 });
 Then('should be on login page', async function () {
     loginPage = new LoginPage(World);
@@ -60,7 +60,7 @@ When('I click on job alerts link', function () {
     return true
 });
 
-Then('should be job alerts page', function () {
+Then('should be on job alerts page', function () {
     //todo
     return true
 });
